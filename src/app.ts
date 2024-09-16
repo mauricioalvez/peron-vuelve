@@ -36,7 +36,8 @@ const processUserMessage = async (ctx, { flowDynamic, state, provider }) => {
         //const cleanedChunk = chunk.trim().replace(/【.*?】[ ] /g, "");
         //await flowDynamic([{ body: cleanedChunk }]);
     //}
-    await flowDynamic([{ body: response }])
+    const cleanedResponse = chunk.trim().replace(/【.*?】[ ] /g, "")
+    await flowDynamic([{ body: cleanedResponse }])
 };
 
 /**
