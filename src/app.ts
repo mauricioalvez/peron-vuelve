@@ -66,6 +66,18 @@ const handleQueue = async (userId) => {
 };
 
 /**
+ * Flujo de imágen y video
+ */
+
+const mediaFlow = addKeyword(EVENTS.MEDIA).addAnswer('No puedo interpretar imagenes, videos ni documentos, intenta enviar un texto o un audio.')
+
+/**
+ * Flujo de documentos
+ */
+
+const documentFlow = addKeyword(EVENTS.DOCUMENT).addAnswer('No puedo interpretar imagenes, videos ni documentos, intenta enviar un texto o un audio.')
+
+/**
  * Flujo de nota de voz
  * Respuesta texto y audio
  */
