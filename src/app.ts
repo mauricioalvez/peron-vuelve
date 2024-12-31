@@ -78,6 +78,12 @@ const mediaFlow = addKeyword(EVENTS.MEDIA).addAnswer('No puedo interpretar image
 const documentFlow = addKeyword(EVENTS.DOCUMENT).addAnswer('No puedo interpretar imagenes, videos ni documentos, intenta enviar un texto o un audio.')
 
 /**
+* Flujo gracias
+*/
+const flowGracias = addKeyword('gracias')
+    .addAnswer(['¡Gracias por interactuar con nosotros!', 'Puedes escribir menu para ver nuevamente los regalos. 🎉 Estamos a tu disposición y te deseamos un muy feliz 2025 lleno de éxitos y felicidad. https://iamaster.com.ar'])
+
+/**
  * Flujo de nota de voz
  * Respuesta texto y audio
  */
@@ -176,7 +182,7 @@ const main = async () => {
      * Flujo del bot
      * @type {import('@builderbot/bot').Flow<BaileysProvider, MemoryDB>}
      */
-    const adapterFlow = createFlow([welcomeFlow, voiceNoteFlow, mediaFlow, documentFlow]);
+    const adapterFlow = createFlow([welcomeFlow, voiceNoteFlow, mediaFlow, documentFlow, flowGracias]);
 
     /**
      * Proveedor de servicios de mensajería
